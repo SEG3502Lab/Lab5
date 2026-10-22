@@ -59,6 +59,30 @@
     @if (errorMessage) {
       <div class="alert alert-danger">{{errorMessage}}</div>
     }
-    <button type="submit" class="btn btn-success" [disabled]="employeeForm.invalid || saving">Submit</button>
+
+    <div class="d-flex gap-3 mt-4">
+      <button
+        type="submit"
+        class="btn btn-success"
+        [disabled]="employeeForm.invalid || saving">
+        {{ saving ? 'Saving...' : 'Submit Employee' }}
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-outline-secondary"
+        [disabled]="employeeForm.pristine || saving"
+        (click)="employeeForm.reset({
+          name: '',
+          dateOfBirth: '',
+          city: '',
+          salary: 0,
+          gender: '',
+          email: ''
+        })">
+        Clear Form
+      </button>
+    </div>
+
   </form>
 </div>

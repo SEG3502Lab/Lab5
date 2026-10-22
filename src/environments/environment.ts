@@ -1,11 +1,12 @@
 export const environment = {
   production: false,
+  useEmulator: true,
   firebase: {
-    apiKey: '',
+    apiKey: 'demo-key',
     authDomain: '',
-    projectId: '',
+    projectId: 'demo-employee-app',
     storageBucket: '',
     messagingSenderId: '',
-    appId: ''
+    appId: 'demo-app'
   }
 };
